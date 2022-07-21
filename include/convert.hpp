@@ -16,6 +16,9 @@ public:
     converter(const std::string& val, int base);
     converter(const char* val, int base);
 
+    auto operator[](std::size_t index) const -> std::byte;
+    void operator^(std::byte val);
+    void xor_len(std::byte val, std::size_t len);
     auto get() const;
     auto get_64_output() -> std::string;
     auto to_64_string() -> std::string;
